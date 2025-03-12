@@ -28,13 +28,20 @@ int main()
 	printf("float 크기 : %d\n", sizeof(float));			// 4byte
 	printf("double 크기 : %d\n", sizeof(double));		// 8byte
 
-	char name[10];
+	char name[20];
 	int age;
 	printf("나이와 이름을 입력하세요 : ");
 	scanf("%d %s", &age, name);
 
-	printf("저의 나이는 %d이고 나이는 %s입니다.", age, name);
+	printf("저의 나이는 %d이고 이름는 %s입니다.", age, name);
 
+	int a;
+	char ch;
+	scanf("%d", &a);
+	getchar();
+	scanf("%c", &ch);
+	// 입출력버퍼 때문에 정수만 입력하고 종료됨(정수 입력하고 엔터키 때문에)
+	// 실행하기 위해서는 scanf(" %c", &ch); or getchar(); 사용
 
 	return 0;
 }
