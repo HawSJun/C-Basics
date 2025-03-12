@@ -39,6 +39,12 @@
     <ClCompile Include="recursive_func.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="if_else.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="switch_case.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="func.h">
