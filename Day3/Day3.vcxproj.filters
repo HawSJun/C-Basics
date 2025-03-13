@@ -15,43 +15,44 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="data_type.cpp">
+    <ClCompile Include="array.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="operator.cpp">
+    <ClCompile Include="array2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="variable.cpp">
+    <ClCompile Include="pointer.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="conditional.cpp">
+    <ClCompile Include="pointer2.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="local_global_var.cpp">
+    <ClCompile Include="pointer3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="func.cpp">
+    <ClCompile Include="pointer_ex.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="local_global_var2.cpp">
+    <ClCompile Include="pointer4.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="recursive_func.cpp">
+    <ClCompile Include="pointer5.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="if_else.cpp">
+    <ClCompile Include="pointer6.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="switch_case.cpp">
+    <ClCompile Include="pointer7.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="loop.cpp">
+    <ClCompile Include="char.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="func.h">
+    <ClCompile Include="char2.c">
       <Filter>소스 파일</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="char3.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

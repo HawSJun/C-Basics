@@ -16,3 +16,5 @@ int Mul(int a, int b)
 {
 	return a * b;
 }
+
+// 함수 정의 : 함수의 실제 동작을 구현하는 부분

@@ -1,11 +1,13 @@
 ﻿// 전역변수
-int global = 0;
+int global = 0;		// main 함수 밖에 선언된 변수 global, 모든 함수에 접근 가능.
 
-int ADD(int left, int right)
-{
+//int ADD(int left, int right);		// 함수 선언, 함수를 사용할 수 있도록 이름과 매개변수(입력값), 반환값(출력값) 등을 정의
+
+int ADD(int left, int right)		// 함수 정의, 함수의 실제 동작을 구현하는 부분
+{	
+	// int i; 	// 지역변수
 	return left + right;
 }
-
 
 // 함수
 int main()
@@ -18,23 +20,25 @@ int main()
 
 
 	// 지역변수
-	int iName = 0;
+	int iName = 0; // 해당 블록 내에서만 사용 가능
 
 	// 괄호 안에 선언된 변수(함수, 지역)
 	{
 		// 변수명 규칙
-		int iName = 100; // 우선순위
+		// 만약 int iName  = 0; 변수가 중첩되면 사용할 수 있나?
+		// 중첩된 블록 안에서는 동일한 변수 사용 가능!! 
+		int iName = 100; 
 		iName;
 		{
-			{
-
-			}
+			// 지역 안에 지역 생성 가능
 		}
 	}
 
+	int iName = 0;		// 같은 지역에 있는 동일한 변수는 사용할 수 없다! (재정의 오류)
 	iName = 100;
 
-	// 함수
+	// 함수, 함수 호출 : 정의된 함수를 실제로 실행하는 것을 의미
+	// 기능의 모듈화
 	int data = 0;
 	data = ADD(10, 20);
 
