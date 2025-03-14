@@ -12,7 +12,7 @@ int main()
 	
 	int* pInt = (int*)&f;   //int* pInt = &f;	// 문법 오류! but, 강제 캐스팅 가능 int* pInt = (int*)&f;		
 	//int* pInt = &i; 
-	// int 형 변수의 주소를 가르키는 포인터 변수
+	// int 형 변수의 주소를 가리키는 포인터 변수
 	// i의 주소를 가르키는 포인터 변수
 
 	// 주소로 접근

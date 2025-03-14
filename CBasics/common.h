@@ -17,4 +17,3 @@ static int g_iStatic = 0;
 extern int g_iExtern;
 // extern을 헤더에 배치할 경우, 초기화를 하면 안된다.
 // 변수를 선언한 게 아니라 g_iExtern이라는 변수가 있다라고 알려주는	것이다.
-// 
