@@ -284,6 +284,7 @@ C와 C++ 기초
 - 값을 저장할 수 있는 메모리 공간, 프로그램의 데이터를 저장하는 기본 단위!
 
     - **지역 변수** : [지역변수/전역변수](./CBasics/variable.cpp)
+
         - 함수 내부에 선언된 변수를 의미. 해당 블록 내부에서만 유효하며, 블록이 끝나면 메모리에서 해제
 
         - 동일한 블록 내에서 같은 이름의 변수를 중복 선언하면 `재정의 오류` 발생!!
@@ -307,13 +308,93 @@ C와 C++ 기초
             ```
 
     - **전역 변수** : [지역변수/전역변수](./CBasics/variable.cpp)
+
         - 함수 밖에서 선언된 변수. 프로그램이 시작될 때 생성되며, 프로그램이 종료될 때까지 메모리에 존재
+        - 프로그램 내 어디서든 접근 가능
 
-    - 정적 변수 : [정적변수](./CBasics/static_extern_var.cpp) / [헤더파일](./CBasics/common.h)/ [선언파일](./CBasics/func.cpp)
+            ```c
+            int g_i = 0;    // 전역변수
+
+            void Test()
+            {
+                ++g_i;
+            }
+
+            int main()
+            {
+                int a = 0;
+                g_i = 0;
+            }
+            ```
+
+    - **정적 변수** : [정적변수](./CBasics/static_extern_var.cpp) / [헤더파일](./CBasics/common.h)/ [참조파일](./CBasics/func.cpp)
+
         - static 키워드를 사용
+        - 정벽변수는 함수 안에서 사용했을 때, 그 함수 안에서만 접근가능하지만, 함수의 호출과 종료에 상관없이 프로그램 실행내내 유지 시킬 수 있는 Data 영역에 저장된 변수를 만들고 싶을 때 정적변수로 선언
 
-    - 외부 변수 : [외부변수](./CBasics/static_extern_var.cpp) / [헤더파일](./CBasics/common.h)/ [선언파일](./CBasics/func.cpp) / [Extern선언](./CBasics/extern_test.cpp)
+        - `main.cpp`에 선언된 정적변수
+
+            ```c
+            #include "common.h"
+
+            static int g_iStatic = 0;   // 정적변수, 각자 파일 전용으로 만들어짐
+
+            void Test()
+            {
+                static int i = 0;   // 함수 안에 선언된 정적변수, Test 함수 안에서만 사용 가능.
+                                    // c++ 문법 기준 static 변수 선언한 초기화 구문은 최초 한번만 실행
+            }
+
+            int main()
+            {
+                g_iStatic;      // main.cpp 정적변수
+                //i = 50;         // Test 함수 내의 static 변수 i는 main에서 지칭할 수 없다.
+                return 0;
+            }
+            ```
+
+        - `func.cpp`에 선연된 정적변수
+
+            ```c
+             #include "common.h"
+
+            static int g_iStatic = 0;   // main.cpp에 선언된 정적변수와 다름!!
+
+            int Add(int a, int b)
+            {
+                g_iStatic; 
+                return 0;
+            }
+            ```
+
+        - `common.h`에 정적변수를 선언 - main.cpp와 func.cpp에 참조
+
+            ```c
+            // 모든 파일이 공통적으로 접근할 수 있는 헤더 파일
+            // main.cpp와 func.cpp에 참조를 시켜도 정적변수는 각 파일 전용으로 사용!
+
+            static int g_iStatic = 0;
+            ```
+
+    - **외부 변수** : [외부변수](./CBasics/static_extern_var.cpp) / [헤더파일](./CBasics/common.h)/ [참조파일](./CBasics/func.cpp) / [Extern선언](./CBasics/extern_test.cpp)
+
         - extern 키워드 사용
+        - 전역적(Global)으로 사용 가능: 한 파일에서 정의된 변수를 다른 파일에서도 사용할 수 있음.
+        - 메모리 할당: 정의된 외부 변수는 데이터 영역에 위치하며, 프로그램 실행 중 유지됨.
+        - 단 한 번만 정의되어야 함: 같은 변수의 정의가 여러 곳에 존재하면 컴파일 에러 발생
+
+        - `common.h`
+            ```c
+            //extern int g_iExtern = 0;   // extern은 헤더에 배치할 경우 초기화를 넣으면 안됨!!
+            extern int g_iExtern;   // g_iExtern 변수가 있다라고 알려주는 역할 함!
+                                    // 즉, 변수가 외부 파일에서 정의되었음을 명시하는 역할
+            ```
+
+        - `test.cpp`
+            ```c
+            // common.h 파일에 g_iExtern 변수가 있다라고 알려주고 선언은 어떤 파일에 해도 상관 없다!
+             extern int g_iExtern = 0;
+            ```
 ---
 #### Lvalue 와 Rvalue
 
@@ -397,3 +478,56 @@ C와 C++ 기초
     - `continue` : 현재 반복을 건너뛰고 다음 반복을 진행
 ---
 ### 함수(Function)
+
+---
+### 포인터(Pointer)
+
+- 주소를 저장하는 변수
+- 주소 연산(&) : 변수의 주소를 가져옴.
+- 역참조 연산(*) : 포인터가 가리키는 주소의 값을 가져오거나 변경함.
+
+    ```c
+    int main() {
+        int a = 10;     // 정수형 변수 선언
+        int *ptr;       // 정수형 포인터 변수 선언
+        ptr = &a;       // 변수 a의 주소를 ptr에 저장
+
+        // a의 값 출력, 즉, 포인터를 통한 간접 참조, *ptr은 ptr이 가리키는 주소의 값 *ptr == a 
+        printf("a의 값: %d\n", *ptr);
+        printf("a의 주소: %p\n", ptr);  // a의 주소 출력
+        printf("ptr의 주소: %p\n", &ptr);  // ptr 변수 자체의 주소 출력
+
+        return 0;
+    }
+    ```
+    
+- 포인터 변수에서 주소의 증감은 자료형 사이즈를 단위로 함!
+
+    ```c
+    int i = 0;
+    pInt = &i;
+
+    pInt += 1;		
+    // pInt는 int* 변수이기 때문에, 가리키는 곳을 int로 해석한다.
+    // 따라서 주소 값을 1 증가한다는 의미는 다음 int 위치로 접근하기 위해서 sizeof(int) 단위로 증가하게 된다.
+    ```
+
+- 주소의 단위(byte), 주소를 표현하는 방식(정수)!!!!!
+- float을 하면 주소를 표현하는 방식이 실수 표현방식의 부동소수점 방식으로 32비트가 채워져있음. 그래서 int 관점에서 해석을 하게 되면 큰 숫자가 됨
+- `포인터 변수의 크기`
+    - 포인터 변수의 크기는 운영체제와 컴파일러의 아키텍처(주소 공간 크기)에 의해 결정된다.
+    - 32비트 운영체제 기반 : 4바이트(32비트)
+    - 64비트 운영체제 기반 : 8바이트(64비트)
+
+#### 포인터와 배열
+- 배열의 특징
+    - 메모리가 연속적인 구조이다!!
+    - 배열의 이름은 배열의 시작 주소이다.
+
+        ```c
+        int iArr[10] = {};
+
+        // int 단위로 접근
+        *(iArr + 0) = 10;		// iArr[0] = 10
+        *(iArr + 1) = 10;		// iArr[1] = 10
+        ```

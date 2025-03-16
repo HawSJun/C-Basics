@@ -50,10 +50,10 @@ int Test()
 
 int main()
 {
-	g_istatic = 100;
-	g_iExtern = 500;
+	g_istatic = 100;    // 정적변수 100을 선언
+	g_iExtern = 500;	// common.h 파일에 g_iExtern 변수가 있다.
 	// F12 : 선언 위치로 이동
-	Add(0, 0);
+	Add(0, 0);			// func.cpp에 있는 ADD 함수 호출
 
 	Test();
 	Test();
