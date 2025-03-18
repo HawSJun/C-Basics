@@ -22,6 +22,9 @@
     <Filter Include="String">
       <UniqueIdentifier>{a93fceac-0f87-4093-9d9f-67af5e02f089}</UniqueIdentifier>
     </Filter>
+    <Filter Include="동적 할당">
+      <UniqueIdentifier>{75fa7366-1fec-45cd-89d1-e598c6234300}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="data_type.cpp">
@@ -95,6 +98,12 @@
     </ClCompile>
     <ClCompile Include="string2.cpp">
       <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Dynamic_Allocation.cpp">
+      <Filter>동적 할당</Filter>
+    </ClCompile>
+    <ClCompile Include="struct_pointer.cpp">
+      <Filter>Pointer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
