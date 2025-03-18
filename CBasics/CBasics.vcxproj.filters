@@ -13,6 +13,15 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Pointer">
+      <UniqueIdentifier>{09be4ff8-a92c-4779-928a-835e4494b3b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Variable">
+      <UniqueIdentifier>{e22ae76b-9832-4efb-9364-59a87578a12d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String">
+      <UniqueIdentifier>{a93fceac-0f87-4093-9d9f-67af5e02f089}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="data_type.cpp">
@@ -21,19 +30,7 @@
     <ClCompile Include="operator.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="variable.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="conditional.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="local_global_var.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="func.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="local_global_var2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="recursive_func.cpp">
@@ -48,43 +45,64 @@
     <ClCompile Include="loop.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="static_extern_var.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="extern_test.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="os.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="pointer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="pointerArray.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="pointerArray_ex.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="const.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Pointer</Filter>
     </ClCompile>
     <ClCompile Include="constpointer.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="pointer.cpp">
+      <Filter>Pointer</Filter>
     </ClCompile>
     <ClCompile Include="pointer_ex.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Pointer</Filter>
     </ClCompile>
     <ClCompile Include="pointer_keypoint.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>Pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="pointerArray.cpp">
+      <Filter>Pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="pointerArray_ex.cpp">
+      <Filter>Pointer</Filter>
+    </ClCompile>
+    <ClCompile Include="local_global_var.cpp">
+      <Filter>Variable</Filter>
+    </ClCompile>
+    <ClCompile Include="local_global_var2.cpp">
+      <Filter>Variable</Filter>
+    </ClCompile>
+    <ClCompile Include="static_extern_var.cpp">
+      <Filter>Variable</Filter>
+    </ClCompile>
+    <ClCompile Include="variable.cpp">
+      <Filter>Variable</Filter>
+    </ClCompile>
+    <ClCompile Include="func.cpp">
+      <Filter>Variable</Filter>
+    </ClCompile>
+    <ClCompile Include="extern_test.cpp">
+      <Filter>Variable</Filter>
+    </ClCompile>
+    <ClCompile Include="char.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="string.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="string2.cpp">
+      <Filter>String</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="func.h">
-      <Filter>소스 파일</Filter>
+      <Filter>Variable</Filter>
     </ClInclude>
     <ClInclude Include="common.h">
-      <Filter>소스 파일</Filter>
+      <Filter>Variable</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
