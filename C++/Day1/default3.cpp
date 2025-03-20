@@ -7,6 +7,10 @@
 using namespace std;
 
 int func(int n = 0) {
+	// 기본 매개변수가 0 값을 가지고 있어서 func(0)이 되어 호출 가능함
+	// 그럼 func()를 호출할 때 두 개의 후보 함수가 존재해서 컴파일 오류 발생!\
+	// int func(int n)으로 변경 시 동작 함. 
+	// why?) 기본값이 설정되어있지않아서
 	return n * n;
 }
 int func() {

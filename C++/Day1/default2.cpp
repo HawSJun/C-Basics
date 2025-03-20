@@ -22,3 +22,8 @@ int coordinates(int x, int y, int z)
 	res = pow(x, 2) + pow(y, 2) + pow(z, 2);		// 제곱
 	return sqrt(res);						// 제곱근
 }
+
+// ex) int coordinates(int x= 0, int y = 0, int z);
+// 이렇게 작성하면 안됨! 무조건 오른쪽부터
+// 함수에 전달되는 인자가 왼쪽에서부터 오른쪽으로 채워지기때문에 
+// 디폴트값을 오른쪽에서 부터 채움
