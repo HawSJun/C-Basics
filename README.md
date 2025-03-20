@@ -479,6 +479,93 @@ C와 C++ 기초
 ---
 ### 함수(Function)
 
+- [함수](./CBasics/function.cpp) / [함수구현](./C/Day2/func3.c)
+
+- 특정 작업을 수행하는 코드 블록으로, 필요할 때 호출하여 사용
+
+- 함수의 특징
+    - 코드 재사용 가능
+    - 프로그램을 모듈화하여 가독성을 높임
+    - 디버깅이 용이
+    - 유지보수 용이
+
+- 함수 기본 구조
+
+    - `함수 선언` : 함수가 사용될 것임을 미리 알리는 역할
+
+        ```c
+        반환형 함수이름(매개변수 리스트);   // 매개변수 : 함수가 외부에서 값을 전달받는 변수
+
+        int add(int a, int b);
+        ```
+
+    - `main 함수`
+
+        ```c
+        int main(void) {
+        실행할 코드;
+        return 0;
+        }
+        
+        int main() {
+        int result = add(3, 5);
+        printf("3 + 5 = %d\n", result);
+        return 0;
+        }
+        ```
+
+    - `함수 정의` : 함수의 실제 동작을 구현하는 부분
+
+        ```c
+        반환형 함수이름(매개변수 리스트) {
+        실행할 코드;
+        return 반환값;  // 반환형이 void일 경우 return 생략 가능
+        }
+
+        int add(int a, int b) {
+        return a + b;
+        }
+        ```
+#### 재귀함수(Recursive Function)
+
+- [재귀함수](./CBasics/recursive_func.cpp)
+
+- 함수가 자기 자신을 호출하는 함수
+
+- 재귀함수의 특징
+    - 가독성, 구현이 용이
+    - 성능면에서는 비효율적
+    - 함수 호출 비용과 해제 비용이 발생
+
+- 스택 오버플로우(Stack Overflow)
+
+    ```c
+    int Factorial(int _iNum)
+    {
+        int iValue = 1;
+
+        for (int j = 0; j < _iNum - 1; ++j)
+        {
+            iValue *= (j + 2);
+
+        }
+        Factorial(10);      // 스택오버플로우 : 재귀함수가 무한히 호출되어 스택이 가득차는 현상
+        
+	    return iValue;
+        // return iValue;는 현재 현재 함수 실행이 끝나면 실행되지만, 그 전에 Factorial(10);이 계속 호출되므로 함수가 끝나지 않는다.
+    }
+    ```
+---
+### 배열(Array)
+
+- [배열1](./CBasics/array.cpp) / [배열2](./C/Day3/array.c)
+
+- 동일한 데이터 타입의 값들을 연속된 메모리 공간에 저장하는 자료 구조
+- 배열의 이름은 배열의 시작 주소
+---
+### 구조체(Structure)
+---
+### 분할구현
 ---
 ### 포인터(Pointer)
 

@@ -120,6 +120,9 @@
     <ClCompile Include="pointer_basic2.cpp">
       <Filter>Pointer</Filter>
     </ClCompile>
+    <ClCompile Include="inout_put.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="func.h">
