@@ -1,5 +1,5 @@
-# C-Cpp-Fundamentals
-C와 C++ 기초
+# C-Basics 
+C 언어 기초 개념 정리
 
 ## 프로그래밍 언어 기초 다지기 전에....
 
